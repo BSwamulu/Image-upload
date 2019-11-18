@@ -12,8 +12,10 @@ var ImageRouter = require('./routes/image');
 const mongoose = require('mongoose');
 mongoose.Promise = require('bluebird');
 
-const url = config.mongoUrl;
-const connect = mongoose.connect(url, {useMongoClient: true });
+// const url = config.mongoUrl;
+// mongoose.connect('mongodb://127.0.0.1:27017/users', { useNewUrlParser: true });
+// const connection = mongoose.connection;
+const connect = mongoose.connect('mongodb://127.0.0.1:27017/img', {useMongoClient: true });
 
 // connect to the database
 connect.then((db) => {
